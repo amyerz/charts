@@ -5,12 +5,17 @@ class TemperaturesController < ApplicationController
   # GET /temperatures.json
   def index
     @temperatures = Temperature.all
+    respond_to do |format|
+      format.html
+      format.json {render json: @temperatures}
+    end
   end
 
   # GET /temperatures/1
   # GET /temperatures/1.json
   def show
     @temperatures =  Temperature.all
+
   end
 
   # GET /temperatures/new
